@@ -16,7 +16,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-//        multiDexEnabled true
+        multiDexEnabled true
 
     }
     buildTypes {
@@ -70,6 +70,6 @@ dependencies {
     //chart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
 
-//    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:multidex:1.0.3'
 
 }

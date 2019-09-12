@@ -10,9 +10,8 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        initializeDagger()
     }
-
 
     private fun initializeDagger() {
         appComponent = DaggerAppComponent.builder()

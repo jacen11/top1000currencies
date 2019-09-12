@@ -1,6 +1,8 @@
 package com.pastukhov.top1000currencies.di
 
-import com.pastukhov.top1000currencies.MainActivity
+import com.pastukhov.top1000currencies.activities.MainActivity
+import com.pastukhov.top1000currencies.activities.ChartActivity
+import com.pastukhov.top1000currencies.chart.LatestChart
 import com.pastukhov.top1000currencies.fragments.CurrenciesListFragment
 import com.pastukhov.top1000currencies.mvp.presenter.CurrenciesPresenter
 import com.pastukhov.top1000currencies.mvp.presenter.LatestChartPresenter
@@ -15,4 +17,6 @@ interface AppComponent {
     fun inject(presenter: CurrenciesPresenter)
     fun inject(presenter: LatestChartPresenter)
     fun inject(fragment: CurrenciesListFragment)
+    fun inject(chart: LatestChart)
+    fun inject(activity: ChartActivity)
 }
