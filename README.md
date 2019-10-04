@@ -2,6 +2,8 @@
 
  В приложении можно посмотреть статистику по саммым популярным криптовалютам
  
-![](imgForReadMe/1.jpg)  
-![](imgForReadMe/2.jpg)
-![](imgForReadMe/3.jpg)
+![main](imgForReadMe/1.jpg) 
+
+![loading](imgForReadMe/2.jpg) 
+
+![detail](imgForReadMe/3.jpg)
