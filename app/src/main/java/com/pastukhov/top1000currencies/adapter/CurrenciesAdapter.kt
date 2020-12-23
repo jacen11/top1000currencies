@@ -14,7 +14,8 @@ class CurrenciesAdapter : BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
 
     //создает ViewHolder и инициализирует views для списка
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_item, parent, false)
         return CurrencyViewHolder(v)
 
     }
@@ -34,25 +35,26 @@ class CurrenciesAdapter : BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
         var ath: Float = 0.0f
         var athChangePercentage: Float = 0.0f
         var circulatingSupply: Double = 0.0
-        var totalSupply: Long = 0
+        var totalSupply: Double = 0.0
 
         init {
             //слушатель клика по элементам списка
             itemView.setOnClickListener {
-                var intent = Intent(itemView.context, ChartActivity::class.java)
-                intent.putExtra("id", id)
-                    .putExtra("name", name)
-                    .putExtra("symbol", symbol)
-                    .putExtra("image", image)
-                    .putExtra("marketCapRank", marketCapRank)
-                    .putExtra("marketCap", marketCap)
-                    .putExtra("marketCapChangePercentage24h", marketCapChangePercentage24h)
-                    .putExtra("priceChangePercentage24h", priceChangePercentage24h)
-                    .putExtra("totalVolume", totalVolume)
-                    .putExtra("ath", ath)
-                    .putExtra("athChangePercentage", athChangePercentage)
-                    .putExtra("circulatingSupply", circulatingSupply)
-                    .putExtra("totalSupply", totalSupply)
+                var intent = Intent(itemView.context, ChartActivity::class.java).apply {
+                    putExtra("id", id)
+                    putExtra("name", name)
+                    putExtra("symbol", symbol)
+                    putExtra("image", image)
+                    putExtra("marketCapRank", marketCapRank)
+                    putExtra("marketCap", marketCap)
+                    putExtra("marketCapChangePercentage24h", marketCapChangePercentage24h)
+                    putExtra("priceChangePercentage24h", priceChangePercentage24h)
+                    putExtra("totalVolume", totalVolume)
+                    putExtra("ath", ath)
+                    putExtra("athChangePercentage", athChangePercentage)
+                    putExtra("circulatingSupply", circulatingSupply)
+                    putExtra("totalSupply", totalSupply)
+                }
                 itemView.context.startActivity(intent)
             }
         }
@@ -98,7 +100,7 @@ class CurrenciesAdapter : BaseAdapter<CurrenciesAdapter.CurrencyViewHolder>() {
         val priceChangePercentage24h: Float,
         val marketCapChangePercentage24h: Float,
         val circulatingSupply: Double,
-        val totalSupply: Long,
+        val totalSupply: Double,
         val ath: Float,
         val athChangePercentage: Float
     )
