@@ -1,10 +1,10 @@
 package com.pastukhov.top1000currencies.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.pastukhov.top1000currencies.adapter.BaseAdapter
 import kotlinx.android.synthetic.main.fragment_currencies_list.*
 

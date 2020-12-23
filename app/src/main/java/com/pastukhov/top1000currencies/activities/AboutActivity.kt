@@ -2,7 +2,7 @@ package com.pastukhov.top1000currencies.activities
 
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pastukhov.top1000currencies.R
 import kotlinx.android.synthetic.main.activity_about.*
