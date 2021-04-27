@@ -11,7 +11,6 @@ class BaseContract {
         private val subscriptions = CompositeDisposable()
         protected lateinit var view: V
 
-
         fun subscribe(subscription: Disposable) {
             subscriptions.add(subscription)
         }

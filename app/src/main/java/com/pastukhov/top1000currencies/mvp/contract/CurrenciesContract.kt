@@ -12,7 +12,7 @@ class CurrenciesContract {
         fun refresh()
     }
 
-    abstract class Presenter: BaseContract.Presenter<View>() {
+    abstract class Presenter : BaseContract.Presenter<View>() {
         abstract fun makeList()
         abstract fun refreshList()
     }

@@ -10,7 +10,7 @@ class LatestChartContract {
         fun refresh()
     }
 
-    abstract class Presenter: BaseContract.Presenter<View>() {
+    abstract class Presenter : BaseContract.Presenter<View>() {
         abstract fun makeChart(id: String)
         abstract fun refreshChart()
     }
