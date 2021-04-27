@@ -1,26 +1,39 @@
 package com.pastukhov.top1000currencies.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.pastukhov.top1000currencies.R
 import com.pastukhov.top1000currencies.fragments.CurrenciesListFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mInterstitialAd: InterstitialAd
+    private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = "ca-app-pub-4971246329107573/1533445505"
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(
+            this,
+            "ca-app-pub-4971246329107573/1533445505",
+            adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(myAd: InterstitialAd) {
+                    mInterstitialAd = myAd
+                }
+
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    mInterstitialAd = null
+                }
+            })
 
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -53,8 +66,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun showAd() {
-        if (mInterstitialAd.isLoaded) {
-            mInterstitialAd.show()
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
         }
     }
 }
